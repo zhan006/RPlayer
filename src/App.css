@@ -12,13 +12,37 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.Player{
+  position:relative;
+}
 .controller{
+  position:absolute;
+  transition: all .3s ease;
+  padding:5px 10px;
+  bottom:0;
   background-color: transparent;
+  display: flex;
+  justify-content: space-between;
 }
 .icon{
   background-color: transparent;
   outline: none;
   border:none
+}
+.playpause{
+  display:none;
+  position: absolute;
+  top:50%;
+  left:50%;
+  height:5.5em;
+  width:5.5em;
+  background-color: rgba(0,0,0,0.6);
+  border-radius: 50%;
+  transform:translate(-50%,-50%);
+  animation: play-pause .3s ease 1;
+}
+.leftButton{
+  
 }
 .App-header {
   background-color: #282c34;
@@ -34,7 +58,10 @@
 .App-link {
   color: #61dafb;
 }
-
+@keyframes play-pause {
+  from{transform:translate(-50%,-50%) scale(1) ;}
+  to{transform:translate(-50%,-50%) scale(1.5);opacity: 0;}
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
