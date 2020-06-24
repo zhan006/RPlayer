@@ -25,11 +25,12 @@ export default function VideoWrap(props){
         //buttonRef.current.style.display= "none"
         setTimeout(()=>buttonRef.current.style.display = "none",100)
 
+
     }
 
     return  (
     <div className = "playerWrap" onClick = {handleClickScreen}>
-        <video ref = {videoRef} src = {srcLink} style = {{width:theme.width}}/>
+        <video ref = {videoRef} src = {srcLink} style= {{width:'100%',height:'100%'}}/>
         <button ref = {buttonRef} className = "playpause icon">
         {
             playStatus?
