@@ -22,7 +22,8 @@ export default function VideoWrap(props){
         if(playStatus) dispatch({type:PAUSE})
         else{dispatch({type:PLAY})}
         buttonRef.current.style.display = "block"
-        setTimeout(()=>buttonRef.current.style.display = "none",300)
+        //buttonRef.current.style.display= "none"
+        setTimeout(()=>buttonRef.current.style.display = "none",100)
 
     }
 
