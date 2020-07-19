@@ -2,6 +2,7 @@ import React, { useContext,useRef, useEffect } from 'react';
 import { themeContext } from '../theme';
 import { useDispatch, useSelector } from 'react-redux';
 import {PAUSE,PLAY,MOVEOVERVIDEO,MOVEOUTVIDEO,CLICKONVIDEO} from '../redux/actionType'
+import {AUTO_BUFFER} from '../config'
 
 export default function VideoWrap(props){
     const {srcLink} = props;
@@ -27,7 +28,7 @@ export default function VideoWrap(props){
 
     return  (
     <div className = "playerWrap" onClick = {handleClickScreen}>
-        <video ref = {videoRef} src = {srcLink} style= {{width:'100%',height:'100%'}}/>
+        <video ref = {videoRef} src = {srcLink} preload = {AUTO_BUFFER} style= {{width:'100%',height:'100%'}}/>
         <button ref = {buttonRef} className = "playpause icon">
         {
             playStatus?

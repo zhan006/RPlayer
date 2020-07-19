@@ -17,11 +17,15 @@ function Player(props){
         playerRef.current.addEventListener("click",()=>dispatch({type:CLICKONVIDEO}))
         setVideoRef(playerRef.current.childNodes[0].childNodes[0]);
     },[playerRef])
+    const handleEnter = (e)=>{
+        e.preventDefault()
+    }
     
     return (
-        <div className="Player" ref={playerRef} style = {{maxWidth:theme.width,margin:"auto"}}>
+        <div className="Player" ref={playerRef} style = {{maxWidth:theme.width,margin:"auto"}} onDragEnter={(e)=>handleEnter(e)}>
             <VideoWrap srcLink = {"https://api.dogecloud.com/player/get.mp4?vcode=5ac682e6f8231991&userId=17&ext=.mp4"}/>
-            <ControlBar videoRef = {videoRef}/>
+            <ControlBar videoRef = {videoRef} playerRef = {playerRef.current}/>
+            
         </div> 
     )
 }

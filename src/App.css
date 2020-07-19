@@ -17,11 +17,19 @@
   height:100%;
 }
 .barWrap{
+  cursor:pointer;
   position:relative;
   width:calc(100% - 20px);
   height:3px;
   margin:5px 0px;
   background-color: rgba(99, 110, 114,0.8);
+}
+.barMask{
+  position:absolute;
+  bottom:0;
+  height:50px;
+  width:100%;
+  cursor:pointer;
 }
 .loaded{
   position:absolute;
@@ -44,6 +52,36 @@
 .Player{
   position:relative;
 }
+.volume-control{
+  display:flex;
+}
+.volume-padding{
+  display:flex;
+  align-items:center;
+  
+  background-color: rgba(0,0,0,0);
+  position:relative;
+  bottom:2px;
+  transition: width 0.1s linear;
+  overflow: hidden;
+}
+.bar{
+  width:100%;
+  height:3px;
+  background-color: rgba(223, 230, 233,0.8);
+}
+.volume{
+  background-color: rgba(116, 185, 255,1.0);
+  height:100%;
+}
+.volume-thumb{
+  background-color: rgba(116, 185, 255,1.0);
+  float:right;
+  transform:translate(50%,-30%);
+  width:10px;
+  height:10px;
+  border-radius: 50%;
+}
 .controller{
   box-sizing: border-box;
   position:absolute;
@@ -55,6 +93,12 @@
   display: flex;
   flex-direction: column;
 }
+.controllerMask{
+  position: absolute;
+  bottom:0;
+  height:200px;
+  width:100%;
+}
 .buttonModule{
   display:flex;
   justify-content:space-between;
@@ -62,7 +106,13 @@
 .icon{
   background-color: transparent;
   outline: none;
-  border:none
+  border:none;
+  /* transition:0.2s linear; */
+  cursor: pointer;
+}
+.setting:hover{
+  transform-origin: center;
+  animation:setting .3s linear 1;
 }
 .playpause{
   display:none;
@@ -77,7 +127,10 @@
   animation: play-pause .3s ease 1;
 }
 .leftButton{
-  
+  display:flex
+}
+.rightButton{
+  display:flex
 }
 .App-header {
   background-color: #282c34;
@@ -92,6 +145,10 @@
 
 .App-link {
   color: #61dafb;
+}
+@keyframes setting{
+  from{transform:rotate(0)}
+  to{transform:rotate(45deg)}
 }
 @keyframes play-pause {
   from{transform:translate(-50%,-50%) scale(1) ;}
