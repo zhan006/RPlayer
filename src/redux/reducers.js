@@ -16,27 +16,8 @@ export function togglePlay(state = initialState,action){
             return state;
     }
 }
-export function volumeControl(state = {old_volume:100,volume:100},action){
-    switch(action.type){
-        case actionType.TURNUP:{
-            if(state.volume ==100){return {volume:100}}
-            else{let new_volume = state.volume+1;return {old_volume:state.volume,volume:new_volume}}
-        }
-        case actionType.TURNDOWN:{
-            if(state.volume == 0){return {volume:0}}
-            else{let new_volume = state.volume-1;return {old_volume:state.volume,volume:new_volume}}
-        }
-        case actionType.TURNOFF:{
-            return {old_volume:state.volume,volume:0}
-        }
-        case actionType.TURNON:{
-            return {old_volume:state.volume,volume:state.old_volume}
-        }
-        default:
-            return state
-    }
-}
-export function mouseState(state = {barVisible:false,volumeBarVisible:false},action){
+
+export function mouseState(state = {barVisible:false,volumeBarVisible:false,settingVisible:false},action){
     switch(action.type){
         case actionType.MOVEOVERVIDEO:{
             return {...state,barVisible:true}
@@ -45,7 +26,7 @@ export function mouseState(state = {barVisible:false,volumeBarVisible:false},act
             return {...state,barVisible:false}
         }
         case actionType.CLICKONVIDEO:{
-            return {...state,barVisible:true}
+            return {...state,barVisible:true,settingVisible:false}
         }
         case actionType.HOVERONVOLUME:{
             return {...state,volumeBarVisible:true}

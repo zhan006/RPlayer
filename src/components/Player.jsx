@@ -12,7 +12,7 @@ function Player(props){
     const dispatch = useDispatch()
     const [videoRef,setVideoRef] = useState(null)
     useEffect(()=>{
-        playerRef.current.addEventListener("mouseover",()=>dispatch({type:MOVEOVERVIDEO}))
+        playerRef.current.addEventListener("mousemove",()=>dispatch({type:MOVEOVERVIDEO}))
         playerRef.current.addEventListener("mouseout",()=>dispatch({type:MOVEOUTVIDEO}))
         playerRef.current.addEventListener("click",()=>dispatch({type:CLICKONVIDEO}))
         setVideoRef(playerRef.current.childNodes[0].childNodes[0]);

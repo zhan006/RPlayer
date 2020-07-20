@@ -37,3 +37,9 @@ export const hoveron_volume = content =>({
 export const leave_volume = content =>({
     type:actionType.LEAVEVOLUME
 })
+export const click_setting = ()=>({
+    type:actionType.CLICKSETTINGON
+})
+export const click_setting = ()=>({
+    type:actionType.CLICKSETTINGOFF
+})

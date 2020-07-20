@@ -114,6 +114,21 @@
   transform-origin: center;
   animation:setting .3s linear 1;
 }
+.menu{
+  display:flex;
+  flex-direction: column;
+  background-color: rgba(0,0,0,0.6);
+  position:absolute;
+  bottom:60px;
+  right:30px;
+  transition:ease-in-out;
+
+}
+.menu-item{
+  color:white;
+  text-align: start;
+  padding:5px 10px
+}
 .playpause{
   display:none;
   position: absolute;
