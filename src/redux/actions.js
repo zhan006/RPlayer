@@ -43,3 +43,12 @@ export const click_setting = ()=>({
 export const click_setting = ()=>({
     type:actionType.CLICKSETTINGOFF
 })
+// content::-{username:String,userid:number}
+export const login = (content)=>({
+    ...content,
+    type:actionType.LOGIN
+})
+export const logout =(content)=>({
+    ...content,
+    type:actionType.LOGOUT
+})

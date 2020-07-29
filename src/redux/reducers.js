@@ -39,4 +39,16 @@ export function mouseState(state = {barVisible:false,volumeBarVisible:false,sett
         }
     }
 }
-
+export const authState = (state={status:0,userName:null,userID:null},action)=>{
+    switch(action.type){
+        case actionType.LOGIN:{
+            return {status:1,userName:action.content.username,userID:action.content.userid}
+        }
+        case actionType.LOGOUT:{
+            return {status:0,userName:null,userID:null}
+        }
+        default:{
+            return state
+        }
+    }
+}

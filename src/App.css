@@ -82,6 +82,18 @@
   height:10px;
   border-radius: 50%;
 }
+.ID-bar{
+  color:white;
+  box-sizing: border-box;
+  position: absolute;
+  top:0px;
+  background-color: rgba(0,0,0,0.6);
+  width: 100%;
+  padding:5px 10px;
+  display:flex;
+  justify-content: flex-end;
+  z-index: 1;
+}
 .controller{
   box-sizing: border-box;
   position:absolute;
@@ -92,6 +104,7 @@
   background-color: rgba(0,0,0,0.6);
   display: flex;
   flex-direction: column;
+  z-index:1;
 }
 .controllerMask{
   position: absolute;
@@ -107,6 +120,7 @@
   background-color: transparent;
   outline: none;
   border:none;
+  color:white;
   /* transition:0.2s linear; */
   cursor: pointer;
 }
@@ -123,6 +137,15 @@
   right:30px;
   transition:ease-in-out;
 
+}
+.menu-top{
+  display:flex;
+  flex-direction: column;
+  background-color: rgba(0,0,0,0.6);
+  position:absolute;
+  top:30px;
+  right:30px;
+  transition:ease-in-out;
 }
 .menu-item{
   color:white;
@@ -157,7 +180,10 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+.login-box{
+  padding:0 5px;
+  margin-right:5px
+}
 .App-link {
   color: #61dafb;
 }

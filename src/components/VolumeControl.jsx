@@ -38,12 +38,10 @@ function VolumeControl(props){
     const handleIconClick = ()=>{
         if(volume>0){
             setBackup(videoRef.volume)
-            console.log(backUp)
             videoRef.volume = 0
             setVolume(0)
         }
         else{
-            console.log(backUp)
             videoRef.volume = backUp
             setVolume(backUp)
         }
