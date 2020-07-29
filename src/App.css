@@ -16,6 +16,13 @@
   width:100%;
   height:100%;
 }
+.player-mask{
+  position: absolute;
+  z-index: 1;
+  height:100%;
+  width:100%;
+  bottom:0;
+}
 .barWrap{
   cursor:pointer;
   position:relative;

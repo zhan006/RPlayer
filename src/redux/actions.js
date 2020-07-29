@@ -38,17 +38,8 @@ export const leave_volume = content =>({
     type:actionType.LEAVEVOLUME
 })
 export const click_setting = ()=>({
-    type:actionType.CLICKSETTINGON
+    type:actionType.CLICKSETTING
 })
-export const click_setting = ()=>({
-    type:actionType.CLICKSETTINGOFF
-})
-// content::-{username:String,userid:number}
-export const login = (content)=>({
-    ...content,
-    type:actionType.LOGIN
-})
-export const logout =(content)=>({
-    ...content,
-    type:actionType.LOGOUT
+export const click_mask =()=>({
+    type:actionType.CLICKMASK
 })
