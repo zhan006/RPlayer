@@ -3,14 +3,17 @@ import {useSelector,useDispatch} from 'react-redux'
 import * as actionType from '../redux/actionType'
 function Setting(props){
     const [settingVisible,setVisible] = useState(false)
+    const visibility = useSelector(state=>state.mouseState.settingVisible)
     const dispatch = useDispatch()
     const handleClick =()=>{
-        setVisible(!settingVisible)
+        console.log(visibility)
+        dispatch({type:actionType.CLICKSETTING})
+        // setVisible(!settingVisible)
     }
     
     return (
         <>  
-            {settingVisible && <div className="menu">
+            {visibility && <div className="menu">
                 <div className="menu-item">Speed</div>
                 <div className ="menu-item">Live Chat</div>
                 <div className ="menu-item">Danmaku</div>

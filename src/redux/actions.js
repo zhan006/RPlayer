@@ -38,8 +38,8 @@ export const leave_volume = content =>({
     type:actionType.LEAVEVOLUME
 })
 export const click_setting = ()=>({
-    type:actionType.CLICKSETTINGON
+    type:actionType.CLICKSETTING
 })
-export const click_setting = ()=>({
-    type:actionType.CLICKSETTINGOFF
+export const click_mask =()=>({
+    type:actionType.CLICKMASK
 })
